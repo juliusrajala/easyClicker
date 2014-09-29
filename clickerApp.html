@@ -1,0 +1,57 @@
+<head>
+  <title>TwiitKlikkeri</title>
+
+</head>
+
+<body>
+
+	<div id="login">
+	{{> loginButtons}}
+	</div>
+	<div id="sovellusIte">
+		<div id="scoreBoard">
+			
+		</div>
+		<div id="peli">
+  				{{> rpsKlikker}}
+
+  		</div>
+  	</div>
+</body>
+
+<template name="rpsKlikker">
+<h2>The list</h2>
+	<table class="leaderboard table table-striped">
+ 		<thead>
+    		<th>Username</th><th>Money</th><th>Match-ups</th><th>£ per Second</th>
+  		</thead>
+
+  {{#each players}}
+    {{> player}}
+  {{/each}}
+</table>
+
+  			<h1>1... 2... 3... FIGHT</h1>
+	<h1>{{user.vastustaja}}</h1>
+  <h3>You @{{user.services.twitter.screenName}} have £{{user.points}} from {{user.games}} matches!</h3>
+
+  <input type="button" class="rock btn span3" value="Rock"/>
+  <input type="button" class="paper btn span3" value="Paper" />
+  <input type="button" class="scissors btn span3" value="Scissors" />
+  
+
+  {{#each items}}
+  <input type="button" class="buy btn span 4" id="{{cost}}" value="Buy {{name}} £{{cost}}"/>
+  {{/each}}
+
+</template>
+
+<template name="player">
+  <tr class="player">
+    <td class="name">{{services.twitter.screenName}}</td>
+    <td class="money">£{{points}}</td>
+    <td class="games">{{games}} matches</td>
+    <td class="rate">{{rate}} £/s</td>
+  </tr>
+</template>
+
