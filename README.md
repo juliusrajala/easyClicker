@@ -1,4 +1,4 @@
-easyClicker
+Rock-Paper-Scissors-clicker
 ===========
 
-A simple clicker game made to improve my understanding of the meteor platform and JS.
+A simple clicker game I built to improve my understanding of JavaScript and MeteorJS stack.
